@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.S.91 | Monitoramento 24h de Verdade</title>
+    <style>
+        /* Estilos Gerais - Paleta Preta e Azul Profundo */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { line-height: 1.6; color: #eee; background-color: #17191b; scroll-behavior: smooth; }
+        
+        /* Menu Estático (Não Fixo) */
+        header { background: #000; color: white; padding: 2rem 5%; text-align: center; border-bottom: 2px solid #003366; }
+        nav { background: #111; padding: 15px 0; text-align: center; border-bottom: 1px solid #222; }
+        nav a { color: #ccc; margin: 0 15px; text-decoration: none; font-weight: bold; cursor: pointer; transition: 0.3s; text-transform: uppercase; font-size: 0.85rem; }
+        nav a:hover { color: #0056b3; }
+
+        /* Estilo das Seções */
+        section { padding: 60px 10%; border-bottom: 1px solid #111; overflow: hidden; }
+        h2 { margin-bottom: 30px; font-size: 2.2rem; color: #0056b3; text-transform: uppercase; }
+        
+        /* Layout de Imagens */
+        .flex-container { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .flex-text { flex: 1; min-width: 300px; }
+        .flex-img { flex: 1; min-width: 300px; }
+        .flex-img img { width: 100%; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); border: 1px solid #222; }
+
+        /* Hero */
+        .hero { 
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+        url('imagens/2.png');
+        
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    height: 70vh; 
+    color: white;
+}
+
+        .hero h1 { font-size: 3.5rem; color: #fff; }
+
+        /* Grid de Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+        .card { background: #111; border-radius: 8px; overflow: hidden; border: 1px solid #222; transition: 0.3s; }
+        .card:hover { border-color: #0056b3; }
+        .card img { width: 100%; height: 300px; object-fit: cover; }
+        .card-content { padding: 20px; text-align: center; }
+
+        .btn { background: #0056b3; color: white; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; }
+        
+        footer { background: #000; color: #666; text-align: center; padding: 30px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header id="inicio">
+        <h1>A.S.91</h1>
+        <p style="color: #0056b3; letter-spacing: 2px;">SEGURANÇA ELETRÔNICA PROFISSIONAL</p>
+    </header>
+
+    <nav>
+        <a onclick="scrollToSection('inicio')">Início</a>
+        <a onclick="scrollToSection('sobre')">Sobre</a>
+        <a onclick="scrollToSection('monitoramento')">Monitoramento</a>
+        <a onclick="scrollToSection('cameras')">Câmeras</a>
+        <a onclick="scrollToSection('alarmes')">Alarmes</a>
+        <a onclick="scrollToSection('acesso')">Acesso</a>
+        <a onclick="scrollToSection('manutencao')">Manutenção</a>
+        <a onclick="scrollToSection('contato')">Contato</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Monitoramento 24h de Verdade</h1>
+        <p>A tecnologia mais avançada protegendo o seu patrimônio dia e noite.</p>
+        <div><a onclick="scrollToSection('contato')" class="btn">SOLICITAR ORÇAMENTO</a></div>
+    </section>
+
+    <section id="sobre">
+        <div class="flex-container">
+            <div class="flex-text">
+                <h2>A Empresa A.S.91</h2>
+                <p> "Há 10 anos no mercado, nascemos para elevar o padrão de segurança. Combinamos inteligência humana com os melhores equipamentos do setor para entregar uma vigilância ativa e eficiente."
+                   
+                </p>
+            </div>
+            <div class="flex-img">
+                <img src="imagens/fachada..jpeg" alt="Escritório A.S.91">
+            </div>
+        </div>
+    </section>
+
+    <section id="monitoramento" style="background-color: #0a0a0a;">
+        <div class="flex-container" style="flex-direction: row-reverse;">
+            <div class="flex-text">
+                <h2>Vigilância 24 Horas</h2>
+                <p>Nossa central não dorme. Através de conexões redundantes, garantimos que qualquer sinal de alerta chegue aos nossos operadores em milissegundos.</p>
+            </div>
+            <div class="flex-img">
+                <img src="imagens/24h.jpeg" alt="Central de Monitoramento">
+            </div>
+        </div>
+    </section>
+
+    <section id="cameras">
+        <h2>🎥 Instalação de Câmeras</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="imagens/camera ip.jfif" alt="Câmera IP">
+                <div class="card-content"><h3>Câmeras IP 4K</h3><p>Resolução ultra nítida e detecção inteligente.</p></div>
+            </div>
+            <div class="card">
+                <img src="imagens/mobile..jpeg" alt="Acesso Remoto">
+                <div class="card-content"><h3>Acesso Mobile</h3><p>Sua propriedade na palma da sua mão.</p></div>
+            </div>
+            <div class="card">
+                <img src="imagens/infravermelho.jpg" alt="Infravermelho">
+                <div class="card-content"><h3>Visão Noturna</h3><p>Monitoramento total mesmo em escuridão absoluta.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="alarmes" style="background-color: #0a0a0a;">
+        <div class="flex-container">
+            <div class="flex-img">
+                <img src="imagens/central-de-alarme-monitorada-ethernet-amt-2018-e-smart-intelbras_1_600.jpg" alt="Sistema de Alarme">
+            </div>
+            <div class="flex-text">
+                <h2>🚨 Sistemas de Alarmes</h2>
+                <p>Utilizamos sensores de tripla tecnologia que evitam alarmes falsos e garantem detecção precisa de intrusos antes mesmo deles entrarem.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="acesso">
+        <h2>☎️🔐 Fechaduras e Interfonia</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="imagens/AF-Fechadura-FR-400-700x478px.jpg" alt="Fechadura Digital">
+                <div class="card-content"><h3>Fechaduras Digitais</h3><p>Conforto e segurança com biometria e tags.</p></div>
+            </div>
+            <div class="card">
+                <img src="imagens/Design sem nome.png" alt="Interfonia">
+                <div class="card-content"><h3>Interfonia Inteligente</h3><p>Vídeo porteiro com integração direta no smartphone.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="manutencao" style="background-color: #0a0a0a;">
+        <div class="flex-container" style="flex-direction: row-reverse;">
+            <div class="flex-text">
+                <h2>🧰 Manutenção Profissional</h2>
+                <p>O sistema de segurança só é útil se estiver funcionando. Fazemos revisões periódicas em cabos, baterias e lentes para garantir 100% de disponibilidade.</p>
+            </div>
+            <div class="flex-img">
+                <img src="imagens/manutenção.jpeg" alt="Manutenção Técnica">
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" style="text-align: center; border-bottom: none;">
+        <h2>Fale com a A.S.91</h2>
+        <p>Preencha os dados ou nos chame no WhatsApp agora mesmo.</p>
+        <div style="margin-top: 30px;">
+            <a href="https://wa.me/5511939210136" target="_blank" class="btn" style="background-color: #25d366;">📱 WHATSAPP: (11) 93921-0136</a>
+        </div>
+        <form style="margin-top: 40px;">
+            <input type="text" placeholder="Nome" style="padding: 12px; width: 280px; background: #111; border: 1px solid #333; color: white;">
+            <button type="button" class="btn">ENVIAR INTERESSE</button>
+        </form>
+    </section>
+   
+
+    <footer>
+        <p>&copy; 2026 A.S.91 - Monitoramento de Verdade. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                window.scrollTo({
+                    top: element.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>
