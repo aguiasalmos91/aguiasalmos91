@@ -46,10 +46,47 @@ header h1 {
         nav { background: #111; padding: 15px 0; text-align: center; border-bottom: 1px solid #222; }
         nav a { color: #ccc; margin: 0 15px; text-decoration: none; font-weight: bold; cursor: pointer; transition: 0.3s; text-transform: uppercase; font-size: 0.85rem; }
         nav a:hover { color: #0056b3; }
+        .menu-toggle {
+    display: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        text-align: center;
+    }
+
+    .menu-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-links.active {
+        display: flex;
+    }
+
+    .menu-links a {
+        margin: 10px 0;
+        display: block;
+    }
+}
 
         /* Estilo das Seções */
         section { padding: 60px 10%; border-bottom: 1px solid #111; overflow: hidden; }
-        h2 { margin-bottom: 30px; font-size: 2.2rem; color: #0056b3; text-transform: uppercase; }
+        h2 { margin-bottom: 30px; font-size: 2.2rem; color:#0056b3; text-transform: uppercase; }
         
         /* Layout de Imagens */
         .flex-container { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
@@ -139,16 +176,14 @@ header h1 {
         filter: drop-shadow(0 0 20px #00c3ff);
     }
 }
+   @keyframes brilho {
+    from {
+        filter: drop-shadow(0 0 5px #0056b3);
+    }
     to {
         filter: drop-shadow(0 0 20px #00c3ff);
-    .logo-animado {
-    width: 200px;
-    margin-bottom: 20px;
-
-    animation: flutuar 3s ease-in-out infinite,
-               brilho 2s infinite alternate;
+    }
 }
-
 @keyframes flutuar {
     0%,100% {
         transform: translateY(0);
@@ -182,8 +217,12 @@ header h1 {
         <h2>A.S.91</h2>
        <h1 style="color: #ffffff; letter-spacing: 2px;">SEGURANÇA ELETRÔNICA PROFISSIONAL </h1>
     </header>
+<nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        ☰
+    </div>
 
-    <nav>
+    <div class="menu-links" id="menuLinks">
         <a onclick="scrollToSection('inicio')">Início</a>
         <a onclick="scrollToSection('sobre')">Sobre</a>
         <a onclick="scrollToSection('monitoramento')">Monitoramento</a>
@@ -192,7 +231,8 @@ header h1 {
         <a onclick="scrollToSection('acesso')">Acesso</a>
         <a onclick="scrollToSection('manutencao')">Manutenção</a>
         <a onclick="scrollToSection('contato')">Contato</a>
-    </nav>
+    </div>
+</nav>
 
   <section class="hero">
 
@@ -446,16 +486,23 @@ O serviço ficou como esperado respeitoso, preço justo, fiz várias pesquisas a
     </footer>
 
     <script>
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                window.scrollTo({
-                    top: element.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    </script>
+function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+
+    if (element) {
+        window.scrollTo({
+            top: element.offsetTop,
+            behavior: 'smooth'
+        });
+    }
+
+    document.getElementById("menuLinks").classList.remove("active");
+}
+
+function toggleMenu() {
+    document.getElementById("menuLinks").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
